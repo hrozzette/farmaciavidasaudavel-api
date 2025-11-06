@@ -1,5 +1,5 @@
-import Cliente from "../model/Cliente.js";
 import type { Request, Response } from "express";
+import Cliente from "../model/Clientes.js";
 class ClienteController extends Cliente {
   static async todos(req: Request, res: Response): Promise<Response> {
     try {

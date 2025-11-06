@@ -4,7 +4,7 @@ const database = new DatabaseModel().pool;
 
 class Cliente {
 
-    private idCliente: number = 0;
+    private idClientes: number = 0;
     private nome: string;
     private cpf: string;
     private telefone: string;
@@ -27,11 +27,11 @@ class Cliente {
     }
 
     public getIdCliente(): number {
-        return this.idCliente;
+        return this.idClientes;
     }
 
     public setIdCliente(idCliente: number): void {
-        this.idCliente = idCliente;
+        this.idClientes = idCliente;
     }
 
     public getNome(): string {
@@ -102,7 +102,7 @@ class Cliente {
             return null;
         }
     }
-    static async listarCliente(cpf: number): Promise<Cliente | null> {
+    static async listarCliente(cpf: string): Promise<Cliente | null> {
         try {
             const querySelectClientes = 'SELECT * FROM clientes WHERE cpf=$1;';
 
